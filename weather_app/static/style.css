@@ -1,0 +1,148 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #1c1e21;
+    background: linear-gradient(135deg, #4b79a1 0%, #283e51 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+}
+
+.page {
+    width: 100%;
+    max-width: 520px;
+}
+
+.panel {
+    background: rgba(255, 255, 255, 0.96);
+    border-radius: 24px;
+    box-shadow: 0 24px 80px rgba(15, 23, 42, 0.18);
+    padding: 32px;
+}
+
+h1 {
+    margin: 0 0 20px;
+    font-size: 2rem;
+    letter-spacing: -0.03em;
+}
+
+.search-form {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.search-form input {
+    width: 100%;
+    padding: 16px 18px;
+    border: 1px solid #d5d9e0;
+    border-radius: 14px;
+    font-size: 1rem;
+}
+
+.search-form button {
+    padding: 16px 24px;
+    border: none;
+    border-radius: 14px;
+    background: #3b82f6;
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.search-form button:hover {
+    background: #2563eb;
+    transform: translateY(-1px);
+}
+
+.message {
+    border-radius: 16px;
+    padding: 16px;
+    margin-top: 12px;
+    text-align: center;
+}
+
+.message.info {
+    background: #eff6ff;
+    color: #1d4ed8;
+}
+
+.message.error {
+    background: #fef2f2;
+    color: #b91c1c;
+}
+
+.weather-card {
+    border-radius: 20px;
+    padding: 24px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+}
+
+.weather-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.weather-header h2 {
+    margin: 0 0 8px;
+    font-size: 1.5rem;
+}
+
+.weather-header p {
+    margin: 0;
+    color: #475569;
+}
+
+.weather-main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 24px;
+    gap: 20px;
+}
+
+.temp {
+    font-size: 3.5rem;
+    font-weight: 700;
+}
+
+.details {
+    display: grid;
+    gap: 12px;
+}
+
+.details div {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.details strong {
+    color: #334155;
+}
+
+@media (max-width: 520px) {
+    .weather-main {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .search-form {
+        grid-template-columns: 1fr;
+    }
+
+    .search-form button {
+        width: 100%;
+    }
+}

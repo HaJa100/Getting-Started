@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="page">
+        <div class="panel">
+            <h1>Current Weather</h1>
+            <form method="post" class="search-form">
+                <input
+                    type="text"
+                    name="city"
+                    value="{{ city }}"
+                    placeholder="Enter a city name"
+                    aria-label="City name"
+                />
+                <button type="submit">Search</button>
+            </form>
+
+            {% if error %}
+                <div class="message error">{{ error }}</div>
+            {% endif %}
+
+            {% if weather %}
+                <div class="weather-card">
+                    <div class="weather-header">
+                        <div>
+                            <h2>{{ weather.city }}</h2>
+                            <p>{{ weather.description }}</p>
+                        </div>
+                        <img src="{{ weather.icon_url }}" alt="Weather icon">
+                    </div>
+
+                    <div class="weather-main">
+                        <div class="temp">{{ weather.temperature }}&deg;C</div>
+                        <div class="details">
+                            <div><strong>Humidity</strong><span>{{ weather.humidity }}%</span></div>
+                            <div><strong>Pressure</strong><span>{{ weather.pressure }} hPa</span></div>
+                            <div><strong>Wind</strong><span>{{ weather.wind_speed }} m/s</span></div>
+                        </div>
+                    </div>
+                </div>
+            {% else %}
+                <div class="message info">Type a city name and press Search to see the current weather.</div>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
